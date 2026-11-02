@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquiries - Kaymows Finest | Book Your Wash in Pretoria</title>
+    <meta name="description" content="Enquire about Kaymows Finest carwash services in Pretoria 0152. Get instant cost and availability. Book from R80.">
+    <link rel="stylesheet" href="css_assets/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+</head>
+<body>
+    <header>
+        <h1 class="logo">Kaymows Finest</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="shop.html">Shop</a>
+            <a href="contact.html">Contact</a>
+            <a href="enquiries.html" class="active">Enquiries</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contact-grid">
+            <section class="contact-form">
+                <h2>Book Your Next Wash</h2>
+                <p id="todayDate"></p>
+                <p id="costDisplay">Select a service to see price & availability</p>
+
+                <form id="enquiryForm" onsubmit="return validateEnquiry()">
+                    <label for="fullNameEnq">Full Name:</label>
+                    <input type="text" id="fullNameEnq" name="fullNameEnq" placeholder="e.g. Kay Mofokeng" required minlength="3">
+
+                    <label for="service">Service Type:</label>
+                    <select id="service" name="service" onchange="updateCost()" required>
+                        <option value="">-- Choose Service --</option>
+                        <option value="80">Basic Wash - R80 - 30 mins</option>
+                        <option value="150">Deluxe Shine - R150 - 1 Hour</option>
+                        <option value="250">Super Gloss Polish Wax - R250</option>
+                        <option value="350">Finest Detail - R350 - 2.5 Hours</option>
+                        <option value="200">All Purpose Interior - R200</option>
+                    </select>
+
+                    <label for="date">Preferred Date:</label>
+                    <input type="date" id="date" name="date" required>
+
+                    <label for="email2">Email Address:</label>
+                    <input type="email" id="email2" name="email2" placeholder="you@email.com" required>
+
+                    <label for="phone2">Phone Number:</label>
+                    <input type="tel" id="phone2" name="phone2" placeholder="071 234 5678" required>
+
+                    <p id="error2"></p>
+                    <p id="success2"></p>
+
+                    <button type="submit" class="button">Send Enquiry</button>
+                    <button type="reset" class="button">Clear</button>
+                </form>
+            </section>
+
+            <section class="contact-info">
+                <h3>Find Us</h3>
+                <p><strong>Address:</strong> 7289/22 Pretoria 0152</p>
+                <p><strong>Email:</strong> info@kaymowsfinest.co.za</p>
+                <p><strong>Phone:</strong> 071 123 4567</p>
+                <p><strong>Hours:</strong> Mon-Sun 07:30 - 18:00</p>
+                
+                <p>
+                    <a href="https://instagram.com/" target="_blank">Instagram</a> | 
+                    <a href="https://facebook.com/" target="_blank">Facebook</a> | 
+                    <a href="https://wa.me/27711234567" target="_blank">WhatsApp</a>
+                </p>
+
+                <div id="map"></div>
+                
+                <div class="info-box">
+                    <h3>Cost & Availability</h3>
+                    <p>Our system shows live pricing. Basic wash available without booking. Finest Detail needs 1 day notice.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Kaymows Finest Carwash | Affordable Luxury, Guaranteed Shine</p>
+        <p>
+            <a href="index.html">Home</a> |
+            <a href="about.html">About</a> |
+            <a href="services.html">Services</a> |
+            <a href="shop.html">Shop</a> |
+            <a href="contact.html">Contact</a> |
+            <a href="enquiries.html">Enquiries</a>
+        </p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
